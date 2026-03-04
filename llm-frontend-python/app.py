@@ -21,7 +21,7 @@ def proxy_analysis(analysis_type):
             f'{BACKEND_URL}/api/ai/{analysis_type}',
             json=request.get_json(),
             headers={'Content-Type': 'application/json'},
-            timeout=30
+            timeout=180
         )
         return jsonify(resp.json()), resp.status_code
     except requests.exceptions.ConnectionError:
